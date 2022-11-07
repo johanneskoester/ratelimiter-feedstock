@@ -11,15 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 1002
+  number: 1003
   script: {{ PYTHON }} -m pip install .
 
 requirements:
   host:
-    - python >=3
+    - python >=3,<3.11  # ratelimiter is not compatible with async changes in python 3.11
     - pip
   run:
-    - python >=3
+    - python >=3,<3.11
 
 test:
   imports:
